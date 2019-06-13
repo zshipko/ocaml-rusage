@@ -1,0 +1,4 @@
+(library
+  (name rusage)
+  (public_name rusage)
+  (c_names rusage_stubs))

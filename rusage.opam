@@ -1,0 +1,25 @@
+opam-version: "2.0"
+maintainer: "Zach Shipko <zachshipko@gmail.com>"
+authors: ["Zach Shipko <zachshipko@gmail.com>"]
+homepage: "https://github.com/zshipko/rusage"
+doc: "https://zshipko.github.io/rusage/doc"
+license: "ISC"
+dev-repo: "git+https://github.com/zshipko/rusage.git"
+bug-reports: "https://github.com/zshipko/rusage/issues"
+tags: []
+
+depends:
+[
+    "ocaml" {>= "4.03.0"}
+    "dune" {build}
+]
+
+build:
+[
+    ["dune" "build" "-p" name "-j" jobs]
+    ["dune" "runtest" "-p" name "-j" 1] {with-test}
+]
+
+synopsis: """
+Wrapper for getrusage
+"""
