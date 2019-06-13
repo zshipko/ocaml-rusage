@@ -17,4 +17,6 @@ type t = {
   nivcsw : int64
 }
 
-external get : int -> t = "unix_getrusage"
+type who = SELF | CHILDREN
+
+external get : who -> t = "unix_getrusage"

@@ -9,7 +9,7 @@
 #define Nothing Val_int(0)
 
 CAMLprim value unix_getrusage(value v_who) {
-  CAMLparam0();
+  CAMLparam1(v_who);
   CAMLlocal1(v_usage);
   int who = (Int_val(v_who) == 0) ? RUSAGE_SELF : RUSAGE_CHILDREN;
   struct rusage ru;
